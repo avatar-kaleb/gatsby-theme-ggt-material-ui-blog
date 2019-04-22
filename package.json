@@ -1,5 +1,5 @@
 {
-  "name": "gatsby-theme-material-ui-blog",
+  "name": "@greatgatsbyjs/gatsby-theme-material-ui-blog",
   "version": "1.0.0",
   "author": "Kaleb @ greatgatsbyjsThemes.com",
   "description": "A simple, yet effect blog utilizing material design.",
