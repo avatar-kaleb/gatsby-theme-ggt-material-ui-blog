@@ -1,3 +1,4 @@
+const pkg = require('./package.json');
 const path = require('path');
 const config = require(`${__dirname}/src/constants/site-config.js`);
 const regexExcludeRobots = /^(?!\/(dev-404-page|404|offline-plugin-app-shell-fallback|tags|categories)).*$/;
@@ -17,12 +18,14 @@ siteMetadata.rssMetadata = rssMetadata;
 module.exports = {
   siteMetadata: siteMetadata,
   plugins: [
+    // required for gatsby themes for now
     {
       resolve: 'gatsby-plugin-compile-es6-packages',
       options: {
-        modules: ['gatsby-theme-ggt-material-ui-blog']
+        modules: [pkg.name]
       }
     },
+    // for users using the theme, we need their content available :D
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -30,30 +33,11 @@ module.exports = {
         path: `content/blog`
       }
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'blog',
-        path: `${__dirname}/content/blog`
-      }
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'blog',
-        path: `${__dirname}/src/pages`
-      }
-    },
+    // create new pages automatically for users
     {
       resolve: `gatsby-plugin-page-creator`,
       options: {
         path: `${__dirname}/src/pages`
-      }
-    },
-    {
-      resolve: `gatsby-plugin-page-creator`,
-      options: {
-        path: `content/blog`
       }
     },
     {
