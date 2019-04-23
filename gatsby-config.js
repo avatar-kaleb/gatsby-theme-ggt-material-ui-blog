@@ -20,7 +20,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-compile-es6-packages',
       options: {
-        modules: ['ggt-material-ui-mdx-blog-theme']
+        modules: ['gatsby-theme-ggt-material-ui-blog']
       }
     },
     {

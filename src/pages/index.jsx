@@ -1,5 +1,4 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import Fade from '@material-ui/core/Fade';
 
 import Blog from '../components/Blog';

@@ -1,22 +1,22 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-exports.onPreBootstrap = ({ store, reporter }) => {
-  const { program } = store.getState();
+// exports.onPreBootstrap = ({ store, reporter }) => {
+//   const { program } = store.getState();
 
-  const dirs = [
-    path.join(program.directory, 'content/blog'),
-    path.join(program.directory, 'src/pages'),
-    path.join(program.directory, 'src/constants')
-  ];
+//   const dirs = [
+//     path.join(program.directory, 'content/blog'),
+//     path.join(program.directory, 'src/pages'),
+//     path.join(program.directory, 'src/constants')
+//   ];
 
-  dirs.forEach(dir => {
-    if (!fs.existsSync(dir)) {
-      reporter.log(`creating the ${dir} directory`);
-      mkdirp.sync(dir);
-    }
-  });
-};
+//   dirs.forEach(dir => {
+//     if (!fs.existsSync(dir)) {
+//       reporter.log(`creating the ${dir} directory`);
+//       mkdirp.sync(dir);
+//     }
+//   });
+// };
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;

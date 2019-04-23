@@ -1,5 +1,5 @@
 {
-  "name": "@greatgatsbyjs/gatsby-theme-material-ui-blog",
+  "name": "@greatgatsbyjs/gatsby-theme-ggt-material-ui-blog",
   "version": "1.0.0",
   "author": "Kaleb @ greatgatsbyjsThemes.com",
   "description": "A simple, yet effect blog utilizing material design.",
@@ -12,7 +12,6 @@
   "devDependencies": {
     "gatsby": "^2.0.118",
     "@material-ui/core": "^3.9.3",
-    "@material-ui/icons": "^3.0.2",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-compile-es6-packages": "^1.1.0",
     "gatsby-plugin-feed": "^2.1.1",
