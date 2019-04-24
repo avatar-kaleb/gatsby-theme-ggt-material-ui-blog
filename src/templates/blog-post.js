@@ -3,12 +3,13 @@ import { graphql } from 'gatsby';
 import Fade from '@material-ui/core/Fade';
 import Grid from '@material-ui/core/Grid';
 import Helmet from 'react-helmet';
-import Layout from '../layouts';
+import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import Moment from 'react-moment';
 import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
 
 import { fadeInTransitionTime } from '../constants/transitions';
+import Layout from '../layouts';
 import useSiteMetadata from '../hooks/use-site-metadata';
 import SEO from '../components/seo';
 
@@ -38,8 +39,9 @@ const styles = theme => ({
  * @returns {Component}
  */
 const BlogPost = ({ classes, data }) => {
+  debugger;
   const { postDateFormat, postDefaultCategoryID, siteUrl, title } = useSiteMetadata();
-  const { markdownRemark: postNode } = data;
+  const { mdx: postNode } = data;
   const {
     fields: { slug }
   } = postNode;
@@ -71,11 +73,10 @@ const BlogPost = ({ classes, data }) => {
           </Grid>
           <Grid container justify='center'>
             <Grid item xs={12} sm={11} md={8} lg={6} xl={4}>
-              <Paper
-                className={classes.paper}
-                component='article'
-                dangerouslySetInnerHTML={{ __html: postNode.html }}
-              />
+              <Paper className={classes.paper} component='article'>
+                {' '}
+                <MDXRenderer>{postNode.code.body}</MDXRenderer>
+              </Paper>
             </Grid>
           </Grid>
         </div>
@@ -86,9 +87,9 @@ const BlogPost = ({ classes, data }) => {
 
 export default memo(withStyles(styles)(BlogPost));
 
-export const query = graphql`
+export const pageQuery = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug } }) {
       frontmatter {
         date
         title
@@ -97,6 +98,9 @@ export const query = graphql`
       }
       fields {
         slug
+      }
+      code {
+        body
       }
       html
       timeToRead

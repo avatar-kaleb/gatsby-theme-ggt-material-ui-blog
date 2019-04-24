@@ -41,6 +41,12 @@ module.exports = {
       }
     },
     {
+      resolve: `gatsby-mdx`,
+      options: {
+        extensions: ['.mdx', '.md', '.markdown']
+      }
+    },
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: siteMetadata.title,
@@ -80,10 +86,10 @@ module.exports = {
                 site: {
                   siteMetadata: { rssMetadata }
                 },
-                allMarkdownRemark
+                allMdx
               }
             }) => {
-              return allMarkdownRemark.edges.map(edge => ({
+              return allMdx.edges.map(edge => ({
                 categories: edge.node.frontmatter.tags,
                 date: edge.node.frontmatter.date,
                 title: edge.node.frontmatter.title,
@@ -96,7 +102,7 @@ module.exports = {
             },
             query: `
             {
-              allMarkdownRemark(
+              allMdx(
                 limit: 1000,
                 sort: { order: DESC, fields: [frontmatter___date] },
               ) {
@@ -192,7 +198,6 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-offline',
-    `gatsby-plugin-catch-links`,
-    `gatsby-transformer-remark`
+    `gatsby-plugin-catch-links`
   ]
 };

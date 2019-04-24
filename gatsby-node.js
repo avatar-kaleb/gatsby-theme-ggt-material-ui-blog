@@ -1,26 +1,26 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
-exports.onPreBootstrap = ({ store, reporter }) => {
-  const { program } = store.getState();
+// exports.onPreBootstrap = ({ store, reporter }) => {
+//   const { program } = store.getState();
 
-  const dirs = [
-    path.join(program.directory, 'content/blog')
-    // path.join(program.directory, 'src/pages'),
-    // path.join(program.directory, 'src/constants')
-  ];
+//   const dirs = [
+//     path.join(program.directory, 'content/blog')
+//     // path.join(program.directory, 'src/pages'),
+//     // path.join(program.directory, 'src/constants')
+//   ];
 
-  dirs.forEach(dir => {
-    if (!fs.existsSync(dir)) {
-      reporter.log(`creating the ${dir} directory`);
-      mkdirp.sync(dir);
-    }
-  });
-};
+//   dirs.forEach(dir => {
+//     if (!fs.existsSync(dir)) {
+//       reporter.log(`creating the ${dir} directory`);
+//       mkdirp.sync(dir);
+//     }
+//   });
+// };
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const slug = createFilePath({ node, getNode, basePath: `pages` });
     createNodeField({
       node,
@@ -33,8 +33,8 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
   return graphql(`
-    {
-      allMarkdownRemark {
+    query {
+      allMdx {
         edges {
           node {
             fields {
@@ -45,10 +45,10 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   `).then(result => {
-    result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+    result.data.allMdx.edges.forEach(({ node }) => {
       createPage({
         path: node.fields.slug,
-        component: path.resolve(`${__dirname}/src/templates/blog-post.js`),
+        component: require.resolve(`./src/templates/blog-post.js`),
         context: {
           // Data passed to context is available
           // in page queries as GraphQL variables.

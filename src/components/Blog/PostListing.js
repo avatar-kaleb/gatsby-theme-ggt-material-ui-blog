@@ -10,7 +10,7 @@ import { Link } from 'gatsby';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 
-import useModeData from '../../hooks/use-post-data';
+import usePostData from '../../hooks/use-post-data';
 import useSiteMetadata from '../../hooks/use-site-metadata';
 
 const styles = theme => ({
@@ -33,8 +33,8 @@ const styles = theme => ({
 const PostListing = ({ classes }) => {
   const { postCardReadBtnText } = useSiteMetadata();
   const {
-    allMarkdownRemark: { edges: postEdges }
-  } = useModeData();
+    allMdx: { edges: postEdges }
+  } = usePostData();
 
   return postEdges.map(postEdge => (
     <Grid key={postEdge.node.frontmatter.title} item xs={12} sm={6} md={6} lg={4}>

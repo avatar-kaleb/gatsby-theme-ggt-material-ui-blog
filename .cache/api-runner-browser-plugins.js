@@ -1,4 +1,7 @@
 module.exports = [{
+      plugin: require('/Users/kmckelvey/github/business/themes/gatsby-theme-ggt-material-ui-blog-workspaces/node_modules/gatsby-mdx/gatsby-browser.js'),
+      options: {"plugins":[],"extensions":[".mdx",".md",".markdown"]},
+    },{
       plugin: require('/Users/kmckelvey/github/business/themes/gatsby-theme-ggt-material-ui-blog-workspaces/node_modules/gatsby-plugin-material-ui/gatsby-browser.js'),
       options: {"plugins":[],"theme":{"palette":{"primary":{"main":"#3f51b5"},"secondary":{"main":"#00796b"}},"typography":{"useNextVariants":true}}},
     },{

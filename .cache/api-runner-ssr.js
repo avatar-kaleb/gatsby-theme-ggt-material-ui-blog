@@ -1,4 +1,7 @@
 var plugins = [{
+      plugin: require('/Users/kmckelvey/github/business/themes/gatsby-theme-ggt-material-ui-blog-workspaces/node_modules/gatsby-mdx/gatsby-ssr'),
+      options: {"plugins":[],"extensions":[".mdx",".md",".markdown"]},
+    },{
       plugin: require('/Users/kmckelvey/github/business/themes/gatsby-theme-ggt-material-ui-blog-workspaces/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
       options: {"plugins":[],"name":"Great Gatsby JS Themes","short_name":"GGT Material UI Blog","description":"test","start_url":"","background_color":"#e0e0e0","theme_color":"#0D47A1","display":"minimal-ui","icon":"/Users/kmckelvey/github/business/themes/gatsby-theme-ggt-material-ui-blog-workspaces/gatsby-theme-ggt-material-ui-blog/static/logo-256.png"},
     },{
