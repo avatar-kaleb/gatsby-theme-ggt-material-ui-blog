@@ -18,23 +18,10 @@ import CssBaseline from '@material-ui/core/CssBaseline';
  * @returns {Component}
  */
 const Layout = ({ children }) => (
-  <StaticQuery
-    query={graphql`
-      query SiteTitleQuery {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `}
-    render={data => (
-      <>
-        <CssBaseline />
-        <Navigation>{children}</Navigation>
-      </>
-    )}
-  />
+  <>
+    <CssBaseline />
+    <Navigation>{children}</Navigation>
+  </>
 );
 
 Layout.propTypes = {
