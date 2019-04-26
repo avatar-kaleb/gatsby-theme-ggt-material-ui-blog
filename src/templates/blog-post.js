@@ -11,7 +11,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { fadeInTransitionTime } from '../constants/transitions';
 import Layout from '../layouts';
 import useSiteMetadata from '../hooks/use-site-metadata';
-import SEO from '../components/seo';
+import SEO from '../components/Seo';
 
 const styles = theme => ({
   articleHeading: {

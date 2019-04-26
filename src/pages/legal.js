@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import Fade from '@material-ui/core/Fade';
 import Layout from '../layouts';
 import { fadeInTransitionTime } from '../constants/transitions';
-import SEO from '../components/seo';
+import SEO from '../components/Seo';
 
 import Legal from '../components/Legal';
 import useSiteMetadata from '../hooks/use-site-metadata';
