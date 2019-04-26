@@ -39,7 +39,6 @@ const styles = theme => ({
  * @returns {Component}
  */
 const BlogPost = ({ classes, data }) => {
-  debugger;
   const { postDateFormat, postDefaultCategoryID, siteUrl, title } = useSiteMetadata();
   const { mdx: postNode } = data;
   const {
@@ -102,7 +101,6 @@ export const pageQuery = graphql`
       code {
         body
       }
-      html
       timeToRead
     }
   }
