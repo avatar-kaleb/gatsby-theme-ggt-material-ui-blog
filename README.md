@@ -1,11 +1,16 @@
-# In Progress Material UI Blog theme
+# gatsby-starter-material-ui-blog-theme
 
-The theme is mostly baked, just need to add a few more documentation pieces to make it easier for you to use :).
+This is a [Gatsby Theme](https://www.gatsbyjs.org/blog/2018-11-11-introducing-gatsby-themes/) created to make having a new material-ui blog quick and easy.
 
-Docs and readme updated soon - first testing my npm publish skillz.
+See the [Example Site](https://gatsby-theme-ggt-material-ui-blog.netlify.com/) to see the design :).
 
-*Note:*
+If you're interested in getting set up, check the starter below.
 
-The theme should be working overall, you can pass in custom site-metadata options to configure to your needs.
+## Use the Starter
 
-I'm working on getting the component shadowing working with the Gatsby team -- starter with examples will be linked here soon!
+Interested in using the blog theme? I've created a gatsby starter for you! [gatsby-starter-ggt-material-ui-blog](https://www.npmjs.com/package/@greatgatsbyjs/gatsby-starter-ggt-material-ui-blog)
+
+
+The starter documentation shows the theme options and explains component shadowing in more detail.
+
+Let me know if you have any questions!

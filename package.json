@@ -1,12 +1,16 @@
 {
   "name": "@greatgatsbyjs/gatsby-theme-ggt-material-ui-blog",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "author": "Kaleb @ greatgatsbyjsThemes.com",
   "description": "A simple, yet effect blog utilizing material design.",
   "keywords": [
     "gatsby theme",
     "material ui blog"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greatgatsbyjsthemes/gatsby-theme-ggt-material-ui-blog"
+  },
   "license": "MIT",
   "main": "index.js",
   "dependencies": {
