@@ -5,7 +5,6 @@ import { pageWrapperTopMargin } from '../../constants/styles';
 import Header from './Header';
 import Footer from './Footer';
 
-console.log(pageWrapperTopMargin);
 const styles = theme => ({
   content: {
     flexGrow: 1,

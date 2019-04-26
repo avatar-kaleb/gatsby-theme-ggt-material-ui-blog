@@ -57,10 +57,10 @@ const Bio = ({ classes }) => {
       <section className={classes.wrapper}>
         <Avatar alt='Remy Sharp' src={avatarImgSrc} className={classes.avatar} />
         <div>
-          <Typography color='secondary' variant='body2'>
+          <Typography color='primary' variant='body2'>
             {bioLineOne}
           </Typography>
-          <Typography color='secondary' variant='body2'>
+          <Typography color='primary' variant='body2'>
             {bioLineTwo}
           </Typography>
         </div>
