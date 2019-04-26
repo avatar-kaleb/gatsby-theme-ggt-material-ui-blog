@@ -7,7 +7,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StaticQuery, graphql } from 'gatsby';
 import Navigation from '../components/Navigation';
 import CssBaseline from '@material-ui/core/CssBaseline';
 

@@ -1,4 +1,7 @@
 const path = require(`path`);
+var fs = require('fs');
+var mkdirp = require('mkdirp');
+
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
 exports.onPreBootstrap = ({ store, reporter }) => {
@@ -6,8 +9,7 @@ exports.onPreBootstrap = ({ store, reporter }) => {
 
   const dirs = [
     path.join(program.directory, 'content/blog'),
-    path.join(program.directory, 'src/pages'),
-    path.join(program.directory, 'src/constants')
+    path.join(program.directory, 'src/gatsby-theme-ggt-material-ui-blog')
   ];
 
   dirs.forEach(dir => {
