@@ -57,7 +57,7 @@ module.exports = themeOptions => {
           name: siteMetadata.title,
           short_name: siteMetadata.manifestShortName,
           description: siteMetadata.description,
-          start_url: pathPrefix,
+          start_url: siteMetadata.pathPrefix,
           background_color: '#e0e0e0',
           theme_color: '#0D47A1',
           display: 'minimal-ui',
