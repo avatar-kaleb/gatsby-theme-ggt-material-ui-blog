@@ -19,7 +19,7 @@ const styles = theme => ({
     textAlign: 'center'
   },
   paper: {
-    padding: theme.spacing.unit,
+    padding: theme.spacing.unit * 3,
     margin: theme.spacing.unit
   },
   title: {
