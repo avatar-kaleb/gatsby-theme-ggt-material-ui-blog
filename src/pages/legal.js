@@ -20,7 +20,7 @@ const LegalPage = ({ classes }) => {
 
   return (
     <Layout>
-      <SEO title='Home' keywords={seoKeywords} />
+      <SEO title='Legal' keywords={seoKeywords} />
       <Fade in timeout={{ enter: fadeInTransitionTime }}>
         <div>
           <Helmet>
