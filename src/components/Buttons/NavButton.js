@@ -11,11 +11,16 @@ const styles = theme => ({
   }
 });
 
-const NavButton = ({ classes, children, color = 'inherit', to, variant = '' }) => (
-  <Button component={Link} className={classes.navButton} color={color} to={to} variant={variant}>
-    {children}
-  </Button>
-);
+const NavButton = ({ classes, children, color = 'inherit', internal = true, to, variant = '' }) =>
+  internal ? (
+    <Button component={Link} className={classes.navButton} color={color} to={to} variant={variant}>
+      {children}
+    </Button>
+  ) : (
+    <Button component='a' className={classes.navButton} color={color} href={to} variant={variant}>
+      {children}
+    </Button>
+  );
 
 NavButton.propTypes = {
   classes: PropTypes.object,

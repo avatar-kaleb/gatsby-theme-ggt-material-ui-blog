@@ -40,7 +40,7 @@ const Footer = ({ classes }) => {
           </Grid>
 
           <Grid className={classes.subscribeButton} item lg={4}>
-            <NavButton color='inherit' to={rssUrl} variant='outlined'>
+            <NavButton color='inherit' to={rssUrl} variant='outlined' internal={false}>
               subscribe
             </NavButton>
           </Grid>
