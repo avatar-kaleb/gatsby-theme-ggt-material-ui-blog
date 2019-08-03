@@ -72,7 +72,7 @@ const BlogPost = ({ classes, data }) => {
             <Grid item xs={12} sm={11} md={8} lg={6} xl={4}>
               <Paper className={classes.paper} component='article'>
                 {' '}
-                <MDXRenderer>{postNode.code.body}</MDXRenderer>
+                <MDXRenderer>{postNode.body}</MDXRenderer>
               </Paper>
             </Grid>
           </Grid>
@@ -96,9 +96,7 @@ export const pageQuery = graphql`
       fields {
         slug
       }
-      code {
-        body
-      }
+      body
       timeToRead
     }
   }
