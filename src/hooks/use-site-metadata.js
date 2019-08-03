@@ -27,6 +27,5 @@ export default () => {
     }
   `);
 
-  console.log('data', data.site.siteMetadata);
   return data.site.siteMetadata;
 };
