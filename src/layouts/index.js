@@ -10,21 +10,10 @@ import PropTypes from 'prop-types';
 import Navigation from '../components/Navigation';
 import { CssBaseline } from '@material-ui/core';
 import { createMuiTheme } from '@material-ui/core/styles';
-
 import { ThemeProvider } from '@material-ui/styles';
 
+import useSiteMetadata from '../hooks/use-site-metadata';
 import config from '../constants/default-site-config';
-const defaultSiteThemeColors = config.defaultSiteThemeColors;
-
-const theme = createMuiTheme({
-  palette: {
-    primary: { main: defaultSiteThemeColors.primary },
-    secondary: { main: defaultSiteThemeColors.secondary }
-  },
-  typography: {
-    useNextVariants: true
-  }
-});
 
 /**
  * Layout component used to wrap all pages with for default site layout
@@ -32,14 +21,27 @@ const theme = createMuiTheme({
  * @param {Object} props
  * @returns {Component}
  */
-const Layout = ({ children }) => (
-  <>
-    <CssBaseline />
-    <ThemeProvider theme={theme}>
-      <Navigation>{children}</Navigation>
-    </ThemeProvider>
-  </>
-);
+const Layout = ({ children }) => {
+  const {
+    theme: { primary, secondary }
+  } = useSiteMetadata();
+
+  const theme = createMuiTheme({
+    palette: {
+      primary: { main: primary },
+      secondary: { main: secondary }
+    }
+  });
+
+  return (
+    <>
+      <CssBaseline />
+      <ThemeProvider theme={theme}>
+        <Navigation>{children}</Navigation>
+      </ThemeProvider>
+    </>
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired

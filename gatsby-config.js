@@ -4,10 +4,12 @@ const regexExcludeRobots = /^(?!\/(dev-404-page|404|offline-plugin-app-shell-fal
 
 const config = require(`${__dirname}/src/constants/default-site-config.js`);
 const defaultSiteMetadata = config.defaultSiteMetadata;
-const defaultSiteThemeColors = config.defaultSiteThemeColors;
 
 module.exports = themeOptions => {
-  const siteMetadata = { ...defaultSiteMetadata, ...themeOptions.siteMetadata };
+  const siteMetadata = {
+    ...defaultSiteMetadata,
+    ...themeOptions.siteMetadata
+  };
 
   const pathPrefix = siteMetadata.pathPrefix === '/' ? '' : siteMetadata.pathPrefix;
   siteMetadata.rssMetadata = {
@@ -55,11 +57,11 @@ module.exports = themeOptions => {
         resolve: 'gatsby-plugin-manifest',
         options: {
           name: siteMetadata.title,
-          short_name: siteMetadata.manifestShortName,
+          short_name: siteMetadata.manifest.shortName,
           description: siteMetadata.description,
           start_url: siteMetadata.pathPrefix,
-          background_color: '#e0e0e0',
-          theme_color: '#0D47A1',
+          background_color: siteMetadata.manifest.backgroundColor,
+          theme_color: siteMetadata.manifest.themeColor,
           display: 'minimal-ui',
           icon: `${__dirname}${siteMetadata.icon}`
         }
@@ -168,7 +170,7 @@ module.exports = themeOptions => {
       {
         resolve: 'gatsby-plugin-nprogress',
         options: {
-          color: defaultSiteThemeColors.secondary,
+          color: siteMetadata.theme.secondary,
           showSpinner: false
         }
       },

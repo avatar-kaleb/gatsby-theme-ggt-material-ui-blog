@@ -16,12 +16,17 @@ export default () => {
           rssUrl
           seoKeywords
           siteUrl
-          title
           tagline
+          theme {
+            primary
+            secondary
+          }
+          title
         }
       }
     }
   `);
 
+  console.log('data', data.site.siteMetadata);
   return data.site.siteMetadata;
 };

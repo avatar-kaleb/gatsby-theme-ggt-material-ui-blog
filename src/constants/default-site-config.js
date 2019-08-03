@@ -9,7 +9,11 @@ module.exports = {
     gATrackingID: '', // google analytics tracking id
     icon: '/static/logo-256.png', // the icon used for your fav and manifest icon. 512px would be best
     legalUrl: '/legal', // the url for custom legal pages if you shadow the legal page component -- recommend default. This url is used for the legal footer button nav on click.
-    manifestShortName: 'GGT Material UI Blog', // The shortname used in the manifest for offline capabilities
+    manifest: {
+      backgroundColor: '#e0e0e0',
+      shortName: 'GGT Material UI Blog', // The shortname used in the manifest for offline capabilities
+      themeColor: '#0D47A1'
+    },
     pathPrefix: '/', // if you want to prefix your site with /blog or other options, do so here.
     postCardReadBtnText: 'Read More', // the text on each post preview button on the home page.
     postDateFormat: 'MMMM Do, YYYY', // the date format below each post
@@ -19,12 +23,12 @@ module.exports = {
     sitemapUrl: '/sitemap.xml', // url of your sitemap - recommend leaving it default
     siteUrl: 'http://localhost:8000', // the url of your site
     tagline: 'the greatest themes', // the tag line for the title of your blog
+    theme: {
+      // these colors are passed to the material-ui plugin to create material themes. Use this pallete to decide: https://material-ui.com/style/color/.
+      // The recommendation is to pick a 400 level color as primary, and an a700 color as secondary.
+      primary: '#3f51b5',
+      secondary: '#00796b'
+    },
     title: `Great Gatsby JS Themes` // the title on the blog
-  },
-  defaultSiteThemeColors: {
-    // these colors are passed to the material-ui plugin to create material themes. Use this pallete to decide: https://material-ui.com/style/color/.
-    // The recommendation is to pick a 400 level color as primary, and an a700 color as secondary.
-    primary: '#3f51b5',
-    secondary: '#00796b'
   }
 };

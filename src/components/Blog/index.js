@@ -1,6 +1,6 @@
 import React, { memo } from 'react';
 
-import Bio from '..//Bio';
+import Bio from '../Bio';
 import PostListing from './PostListing';
 
 import { Grid, withStyles } from '@material-ui/core';
