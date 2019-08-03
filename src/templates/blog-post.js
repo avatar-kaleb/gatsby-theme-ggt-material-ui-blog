@@ -1,17 +1,15 @@
 import React, { memo } from 'react';
 import { graphql } from 'gatsby';
-import Fade from '@material-ui/core/Fade';
-import Grid from '@material-ui/core/Grid';
 import Helmet from 'react-helmet';
 import MDXRenderer from 'gatsby-mdx/mdx-renderer';
 import Moment from 'react-moment';
-import Paper from '@material-ui/core/Paper';
-import { withStyles } from '@material-ui/core/styles';
 
 import { fadeInTransitionTime } from '../constants/transitions';
 import Layout from '../layouts';
 import useSiteMetadata from '../hooks/use-site-metadata';
 import SEO from '../components/Seo';
+
+import { Fade, Grid, Paper, withStyles } from '@material-ui/core';
 
 const styles = theme => ({
   articleHeading: {
@@ -19,16 +17,16 @@ const styles = theme => ({
     textAlign: 'center'
   },
   paper: {
-    padding: theme.spacing.unit * 3,
-    margin: theme.spacing.unit
+    padding: theme.spacing(3),
+    margin: theme.spacing(1)
   },
   title: {
-    marginTop: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit / 2
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(0.5)
   },
   wrapper: {
-    padding: theme.spacing.unit,
-    margin: theme.spacing.unit * 2
+    padding: theme.spacing(1),
+    margin: theme.spacing(2)
   }
 });
 

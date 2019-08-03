@@ -1,9 +1,7 @@
 import React, { memo } from 'react';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import Grid from '@material-ui/core/Grid';
 
 import useSiteMetadata from '../../hooks/use-site-metadata';
+import { Card, CardContent, Grid } from '@material-ui/core';
 /**
  * Terms and Conditions Page Component
  */

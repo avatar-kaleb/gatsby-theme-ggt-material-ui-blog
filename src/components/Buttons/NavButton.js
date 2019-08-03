@@ -2,12 +2,11 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 import { Link } from 'gatsby';
-import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
+import { Button, withStyles } from '@material-ui/core';
 
 const styles = theme => ({
   navButton: {
-    marginLeft: theme.spacing.unit * 3
+    marginLeft: theme.spacing(3)
   }
 });
 

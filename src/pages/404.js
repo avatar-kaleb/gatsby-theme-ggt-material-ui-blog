@@ -2,25 +2,21 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-// relative
-import Grid from '@material-ui/core/Grid';
-import Fade from '@material-ui/core/Fade';
-import Paper from '@material-ui/core/Paper';
-import { withStyles } from '@material-ui/core/styles';
-
 import Layout from '../layouts';
 import { fadeInTransitionTime } from '../constants/transitions';
 import PostListing from '../components/Blog/PostListing';
 import SEO from '../components/Seo';
 import useSiteMetadata from '../hooks/use-site-metadata';
 
+import { Grid, Fade, Paper, withStyles } from '@material-ui/core';
+
 const styles = theme => ({
   primaryText: {
     color: theme.palette.primary.dark
   },
   paper: {
-    margin: `${theme.spacing.unit * 2}px auto`,
-    padding: theme.spacing.unit * 3,
+    margin: `${theme.spacing(2)}px auto`,
+    padding: theme.spacing(3),
     textAlign: 'center',
     wordWrap: 'break-word',
     [theme.breakpoints.up('lg')]: {

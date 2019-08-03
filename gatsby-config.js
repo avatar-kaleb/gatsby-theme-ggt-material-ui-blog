@@ -163,18 +163,7 @@ module.exports = themeOptions => {
         }
       },
       {
-        resolve: `gatsby-plugin-material-ui`,
-        options: {
-          theme: {
-            palette: {
-              primary: { main: themeOptions.primaryColor || defaultSiteThemeColors.primary },
-              secondary: { main: themeOptions.secondaryColor || defaultSiteThemeColors.secondary }
-            },
-            typography: {
-              useNextVariants: true
-            }
-          }
-        }
+        resolve: `gatsby-plugin-material-ui`
       },
       {
         resolve: 'gatsby-plugin-nprogress',

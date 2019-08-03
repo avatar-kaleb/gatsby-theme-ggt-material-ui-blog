@@ -1,13 +1,13 @@
 import React, { memo } from 'react';
-import Grid from '@material-ui/core/Grid';
-import { withStyles } from '@material-ui/core/styles';
 
 import Bio from '..//Bio';
 import PostListing from './PostListing';
 
+import { Grid, withStyles } from '@material-ui/core';
+
 const styles = theme => ({
   button: {
-    margin: theme.spacing.unit / 2
+    margin: theme.spacing(0.5)
   },
   link: {
     color: theme.palette.secondary.contrastText,
@@ -16,8 +16,8 @@ const styles = theme => ({
   pageWrapper: {
     width: '100%',
     margin: '0px',
-    marginTop: theme.spacing.unit,
-    padding: theme.spacing.unit * 2
+    marginTop: theme.spacing(1),
+    padding: theme.spacing(2)
   }
 });
 
@@ -30,7 +30,7 @@ const styles = theme => ({
 const Blog = ({ classes, postEdges }) => {
   return (
     <>
-      <Grid className={classes.pageWrapper} container direction='row' spacing={24}>
+      <Grid className={classes.pageWrapper} container direction='row' spacing={3}>
         <Grid item xs={12}>
           <Bio />
         </Grid>

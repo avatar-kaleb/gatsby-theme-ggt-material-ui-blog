@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
-import { withStyles } from '@material-ui/core/styles';
-
 import { pageWrapperTopMargin } from '../../constants/styles';
+
 import Header from './Header';
 import Footer from './Footer';
+import { withStyles } from '@material-ui/core';
 
 const styles = theme => ({
   content: {

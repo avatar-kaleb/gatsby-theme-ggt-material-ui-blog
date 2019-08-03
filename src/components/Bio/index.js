@@ -1,18 +1,15 @@
 import React, { memo } from 'react';
 
-import Avatar from '@material-ui/core/Avatar';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
-
 import useSiteMetadata from '../../hooks/use-site-metadata';
+
+import { Avatar, Paper, Typography, withStyles } from '@material-ui/core';
 
 const styles = theme => ({
   avatar: {
     alignItems: 'normal',
     height: 60,
     margin: 10,
-    marginRight: theme.spacing.unit * 3,
+    marginRight: theme.spacing(3),
     width: 60
   },
   paper: {

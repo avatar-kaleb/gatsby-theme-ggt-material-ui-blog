@@ -1,28 +1,31 @@
 import React, { memo } from 'react';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Divider from '@material-ui/core/Divider';
-import Grid from '@material-ui/core/Grid';
 import { Link } from 'gatsby';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
 
 import usePostData from '../../hooks/use-post-data';
 import useSiteMetadata from '../../hooks/use-site-metadata';
 
+import {
+  Button,
+  Card,
+  CardHeader,
+  CardContent,
+  CardActions,
+  Divider,
+  Grid,
+  Typography,
+  withStyles
+} from '@material-ui/core';
+
 const styles = theme => ({
   button: {
-    margin: theme.spacing.unit / 2
+    margin: theme.spacing(0.5)
   },
   gradient: {
     background: `linear-gradient(180deg, ${theme.palette.secondary.light} 0%, ${
       theme.palette.primary.dark
     } 50%, ${theme.palette.secondary.light} 100%)`,
     height: '100vh',
-    padding: theme.spacing.unit * 2
+    padding: theme.spacing(2)
   },
   link: {
     color: theme.palette.secondary.contrastText,

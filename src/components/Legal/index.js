@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import Appbar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
 
 import CopyrightNotice from './CopyrightNotice';
 import Disclaimer from './Disclaimer';
 import PrivacyPolicy from './PrivacyPolicy';
 import TermsAndConditions from './TermsAndConditions';
+
+import { AppBar as Appbar, Tabs, Tab } from '@material-ui/core';
 
 function TabContainer(props) {
   return <div style={{ padding: 8 * 3 }}>{props.children}</div>;

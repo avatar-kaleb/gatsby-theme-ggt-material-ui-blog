@@ -1,12 +1,9 @@
 import React, { memo } from 'react';
 import { Link } from 'gatsby';
-import AppBar from '@material-ui/core/AppBar';
-import Grid from '@material-ui/core/Grid';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
 
 import useSiteMetadata from '../../hooks/use-site-metadata';
+
+import { AppBar, Grid, Toolbar, Typography, withStyles } from '@material-ui/core';
 
 const styles = theme => ({
   appBar: {
@@ -17,15 +14,15 @@ const styles = theme => ({
     flexGrow: 1
   },
   tagline: {
-    paddingLeft: theme.spacing.unit * 2,
+    paddingLeft: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
       paddingLeft: 0,
-      paddingBottom: theme.spacing.unit / 2
+      paddingBottom: theme.spacing(0.5)
     }
   },
   title: {
     borderRight: '3px white solid',
-    paddingRight: theme.spacing.unit * 2,
+    paddingRight: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
       borderRight: '0px'
     }
