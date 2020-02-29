@@ -2,7 +2,7 @@
 
 This is a [Gatsby Theme](https://www.gatsbyjs.org/blog/2018-11-11-introducing-gatsby-themes/) created to make having a new material-ui blog quick and easy.
 
-See the [Example Site](https://gatsby-theme-ggt-material-ui-blog.netlify.com/) to see the design :).
+See the [Example Site](https://gatsby-theme-material-ui-blog.netlify.com/) to see the design :).
 
 If you're interested in getting set up, check the starter below.
 
