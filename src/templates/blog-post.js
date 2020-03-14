@@ -1,15 +1,13 @@
-import React, { memo } from 'react';
-import { graphql } from 'gatsby';
-import Helmet from 'react-helmet';
-import MDXRenderer from 'gatsby-mdx/mdx-renderer';
-import Moment from 'react-moment';
-
-import { fadeInTransitionTime } from '../constants/transitions';
-import Layout from '../layouts';
-import useSiteMetadata from '../hooks/use-site-metadata';
-import SEO from '../components/Seo';
-
 import { Fade, Grid, Paper, withStyles } from '@material-ui/core';
+import { graphql } from 'gatsby';
+import { MDXRenderer } from 'gatsby-plugin-mdx';
+import React, { memo } from 'react';
+import Helmet from 'react-helmet';
+import Moment from 'react-moment';
+import SEO from '../components/Seo';
+import { fadeInTransitionTime } from '../constants/transitions';
+import useSiteMetadata from '../hooks/use-site-metadata';
+import Layout from '../layouts';
 
 const styles = theme => ({
   articleHeading: {
@@ -37,7 +35,12 @@ const styles = theme => ({
  * @returns {Component}
  */
 const BlogPost = ({ classes, data }) => {
-  const { postDateFormat, postDefaultCategoryID, siteUrl, title } = useSiteMetadata();
+  const {
+    postDateFormat,
+    postDefaultCategoryID,
+    siteUrl,
+    title
+  } = useSiteMetadata();
   const { mdx: postNode } = data;
   const {
     fields: { slug }
@@ -55,22 +58,23 @@ const BlogPost = ({ classes, data }) => {
     <Layout>
       <Helmet>
         <title>{`${post.title} | ${title}`}</title>
-        <link rel='canonical' href={`${siteUrl}${post.id}`} />
+        <link rel="canonical" href={`${siteUrl}${post.id}`} />
       </Helmet>
       <SEO postPath={slug} postNode={postNode} postSEO title={post.title} />
       <Fade in timeout={{ enter: fadeInTransitionTime }}>
         <div className={classes.wrapper}>
-          <Grid className={classes.articleHeading} container justify='center'>
+          <Grid className={classes.articleHeading} container justify="center">
             <Grid item>
               <h1 className={classes.title}>{post.title}</h1>
               <p>
-                <Moment format={postDateFormat}>{post.date}</Moment> ~ 🍵 {post.timeToRead} min read
+                <Moment format={postDateFormat}>{post.date}</Moment> ~ 🍵{' '}
+                {post.timeToRead} min read
               </p>
             </Grid>
           </Grid>
-          <Grid container justify='center'>
+          <Grid container justify="center">
             <Grid item xs={12} sm={11} md={8} lg={6} xl={4}>
-              <Paper className={classes.paper} component='article'>
+              <Paper className={classes.paper} component="article">
                 {' '}
                 <MDXRenderer>{postNode.body}</MDXRenderer>
               </Paper>
